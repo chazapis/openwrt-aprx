@@ -8,4 +8,6 @@ Alternatively, you can build the `aprx` package alone with:
 make package/arpx/compile
 ```
 
+Binaries (ready-made packages) are available under the releases tab.
+
 73 de SV1OAN
