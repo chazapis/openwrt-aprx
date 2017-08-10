@@ -8,13 +8,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aprx
-PKG_VERSION:=2.8.2
+PKG_VERSION:=2.9.0
 PKG_RELEASE:=1
 PKG_LICENSE:=BSD-3-Clause
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://thelifeofkenneth.com/aprx/release
-PKG_MD5SUM:=662b1d257c39ad58c58954452726e4ac
+PKG_MD5SUM:=9a69509ceb67e2914743621ec3e5b876
 
 PKG_INSTALL:=1
 
@@ -49,6 +49,8 @@ define Build/Compile
 endef
 
 define Package/aprx/install
+	$(INSTALL_DIR) $(1)/etc/init.d
+        $(INSTALL_BIN) ./files/aprx.init $(1)/etc/init.d/aprx
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(CP) $(PKG_INSTALL_DIR)/usr/sbin/aprx $(1)/usr/sbin/
 	$(INSTALL_DIR) $(1)/etc
